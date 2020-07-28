@@ -36,13 +36,12 @@ module Pivot
     end
 
     def self.unique_assignees(item)
-      tally = []
-      item.each { | hash | tally << hash[:assignee] }
-      tally.uniq
+      all_emails = []
+      item.each { | hash | all_emails << hash[:assignee] }
+      all_emails.uniq
     end
 
   end
-
 end
 
 items = [
