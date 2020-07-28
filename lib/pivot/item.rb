@@ -7,8 +7,8 @@ module Pivot
       @points = points
     end
 
-    def + 
-  
+    def +(object) 
+      @points + (object.points)
     end
 
     def project_code
@@ -23,10 +23,4 @@ module Pivot
     end
     
   end
-
 end
-c = Pivot::Item.new(name: "qwert-10", assignee: "smith@example.com", points: 2)
-# p c.+
-p c.valid?
-# d = Pivot::Item.new(name: "EREC-22", assignee: "johndough@example.com", points: 5)
-# p d.+
