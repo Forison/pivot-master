@@ -15,7 +15,11 @@ module Pivot
       result
     end
 
-    def self.pivoted?
+    def self.pivoted?(item, arg)
+      item.each do |hash|
+        return true if (hash[:assignee]==arg)
+      end
+      false
     end
     def self.total_points
     end
@@ -32,4 +36,4 @@ items = [
   { name: "EREC-13", assignee: 'genericman@example.com', points: 2},
   { name: "EREC-14", assignee: 'johndough@example.com',  points: 1}
 ]
-p Pivot::Tracker.item_for(items, 'johndough@example.com')
+p Pivot::Tracker.pivoted?(items, "cesar@example.com")
