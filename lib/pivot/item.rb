@@ -1,16 +1,19 @@
 module Pivot
   class Item
     attr_reader :name, :assignee, :points
-    def initialize(name: '', assignee: '', points: nil)
+    def initialize(name: '', assignee: '', points: 0)
       @name = name
       @assignee = assignee
       @points = points
     end
 
     def + 
+  
     end
 
     def project_code
+      code_list = @name.split('-')
+      code_list[0]
     end
 
     def valid?
@@ -19,5 +22,3 @@ module Pivot
   end
 
 end
-# c = Pivot::Item.new(name: "EREC-10", assignee: "smith@example.com", points: 2)
-# p c.name
