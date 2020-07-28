@@ -1,11 +1,7 @@
 require 'logger'
 
 module Pivot
-  class Logger
+  class Logger < Logger
     # Code here!
-    def initialize(arg)
-    end
   end
-  
 end
-p Pivot::Logger.new($stdout).class.superclass
