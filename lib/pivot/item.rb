@@ -17,8 +17,16 @@ module Pivot
     end
 
     def valid?
+      return true if project_code == 'EREC'
+      return true if project_code == 'AZR'
+      false
     end
     
   end
 
 end
+c = Pivot::Item.new(name: "qwert-10", assignee: "smith@example.com", points: 2)
+# p c.+
+p c.valid?
+# d = Pivot::Item.new(name: "EREC-22", assignee: "johndough@example.com", points: 5)
+# p d.+
