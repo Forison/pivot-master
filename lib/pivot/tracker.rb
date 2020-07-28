@@ -35,8 +35,12 @@ module Pivot
       count
     end
 
-    def self.unique_assignees
+    def self.unique_assignees(item)
+      tally = []
+      item.each { | hash | tally << hash[:assignee] }
+      tally.uniq
     end
+
   end
 
 end
@@ -50,5 +54,4 @@ items = [
   { name: "EREC-13", assignee: 'genericman@example.com', points: 2},
   { name: "EREC-14", assignee: 'johndough@example.com',  points: 1}
 ]
-p Pivot::Tracker.total_points(items)
-# p Pivot::Tracker.total_points(items, assignee: 'johndough@example.com')
+p Pivot::Tracker.unique_assignees(items)

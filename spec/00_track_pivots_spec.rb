@@ -48,7 +48,7 @@ RSpec.describe Pivot::Tracker do
   end
 
   describe ".unique_assignees" do
-    it "gets the unique assignee emails tbat pivoted" do
+    it "gets the unique assignee emails that pivoted" do
       unique_assignees = Pivot::Tracker.unique_assignees(items)
 
       expect(unique_assignees.count).to eq(5)
