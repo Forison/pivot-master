@@ -4,7 +4,6 @@ RSpec.describe Pivot::Person do
   let(:person) { Pivot::Person.new(email: "johndough@example.com", first_name: "John", last_name: "Dough") }
   let(:item) { Pivot::Item.new(name: "EREC-10", points: 2) }
   let(:logger) { Pivot::Logger.new($stdout) }
-
   describe "#email" do
     it "it gets the email of the person" do
       expect(person.email).to eq("johndough@example.com")
@@ -37,7 +36,6 @@ RSpec.describe Pivot::Person do
 
     it "should be able to optionally log the event via a block" do
       expect(logger).to receive(:info).with("item added").and_return(true)
-
       person.add_item(item) { logger.info "item added" }
     end
   end
