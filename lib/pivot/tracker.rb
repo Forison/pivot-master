@@ -24,7 +24,11 @@ module Pivot
     def self.total_points(item, arg = nil)
       count = 0
       if arg.nil?
-        
+        tally = {}
+        item.each do | hash |
+          tally[hash[:assignee]] = hash[:points]
+        end
+        count = tally.values.reduce(:+)
       else
         item.each { |hash| count += hash[:points] if hash[:assignee]==arg[:assignee] }
       end
@@ -46,5 +50,5 @@ items = [
   { name: "EREC-13", assignee: 'genericman@example.com', points: 2},
   { name: "EREC-14", assignee: 'johndough@example.com',  points: 1}
 ]
-# p Pivot::Tracker.total_points(items)
-p Pivot::Tracker.total_points(items, assignee: 'johndough@example.com')
+p Pivot::Tracker.total_points(items)
+# p Pivot::Tracker.total_points(items, assignee: 'johndough@example.com')
