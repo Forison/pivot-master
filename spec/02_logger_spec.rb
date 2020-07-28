@@ -8,5 +8,5 @@ RSpec.describe Pivot::Logger do
   it "is subclassed from the stdlib Logger class" do
     expect(logger.class.superclass).to eq(Logger)
   end
-
+  
 end
