@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'logger'
 
 module Pivot
@@ -6,9 +8,7 @@ module Pivot
     def initialize(argument)
       @messager = argument
     end
-  
-    def info(message)
-      
-    end
+
+    def info(message); end
   end
 end

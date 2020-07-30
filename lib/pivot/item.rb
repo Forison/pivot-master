@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Pivot
   class Item
     attr_reader :name, :assignee, :points
@@ -7,8 +9,8 @@ module Pivot
       @points = points
     end
 
-    def +(object) 
-      @points + (object.points)
+    def +(object)
+      @points + object.points
     end
 
     def project_code
@@ -19,8 +21,8 @@ module Pivot
     def valid?
       return true if project_code == 'EREC'
       return true if project_code == 'AZR'
+
       false
     end
-    
   end
 end
